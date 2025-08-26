@@ -75,7 +75,12 @@ const displayPlayers = () => {
 
 const loadPlayers = () => {
     const itemLocal = JSON.parse(localStorage.getItem("players") || "[]") //precisei colocar || [] caso não retorne nada
+    const main = document.querySelector("main")
     if(itemLocal != []){
+         main.innerHTML = ""
+        itemLocal.forEach((item , index)=>{
+          main.innerHTML +=`<h1>${item.nome}</h1>`
+        })
         console.log("jogadoras carregadas")
     }else{
         console.log("ERRO, não foi possivel acessar local Storage")
