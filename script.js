@@ -83,7 +83,23 @@ const loadPlayers = () => {
     if(itemLocal != []){           //se o local storage existir ele carrega na main o conteudo
          main.innerHTML = ""      //apaga caso já existente
         itemLocal.forEach((item , index)=>{ //adiciona percorrendo a lista
+          if(item.favorita == true){
           main.innerHTML +=`
+            <div class = "card-players">
+            <h1>${item.nome}</h1>
+            <img src="${item.foto}" alt="imagem jogadora n°${index + 1}"
+            <p>pos:${item.posicao}</p>
+            <p>clube:${item.clube}</p>
+            <p>gols:${item.gols}</p>
+            <p>Assitencias:${item.assistencias}</p>
+            <p>jogos:${item.jogos}</p>
+            <p>favorita:${item.favorita}</p>
+            <img src="./Assets/star.png" alt="Imagem Favorito" style="width: 200px; height: 200px;">
+
+            </div>
+            `
+          }else{
+            main.innerHTML +=`
           <div class = "card-players">
           <h1>${item.nome}</h1>
           <img src="${item.foto}" alt="imagem jogadora n°${index + 1}"
@@ -93,8 +109,10 @@ const loadPlayers = () => {
           <p>Assitencias:${item.assistencias}</p>
           <p>jogos:${item.jogos}</p>
           <p>favorita:${item.favorita}</p>
+          <button>favoritar</button>
           </div>
           `
+          }
         })
         console.log("jogadoras carregadas")
         
@@ -154,6 +172,7 @@ const criarJogadora = (nome, posicao,clube,gols,assistencias,jogos) =>{
     //recarrega a lista para atualizar os cards
     loadPlayers() // UPDATE
     console.log("criado" , jogadoras)//jogador(a) criada :)
+    alert("Jogadora adicionada com sucesso!")
   }
 
 }
