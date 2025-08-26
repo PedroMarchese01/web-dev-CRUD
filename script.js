@@ -61,14 +61,16 @@ window.onload = () => {
 
 const displayPlayers = () => {
     //verificar se contem algo guardado no local storage
-
-    if (localStorage.getItem("players")){
+    const playersLoad = JSON.parse(localStorage.getItem("playersLoaded?")) //pega playersLoaded? caso tenha no localstorage
+    if (playersLoad === true){ //verifica se é = true para realizar a ação de carregarv corretamente
         console.log("existe players, alterados ou não")
         loadPlayers()//carrega jogadoras (se dados já foram alterados não é necessário mexer, pois já houve alguma interação com CRUD)
 
     }else{
         console.log("não existe players")
         localStorage.setItem("players" , JSON.stringify(jogadoras)) //guarda as jogadoras já existentes
+        console.log("criada jogadoras padrões ao iniciar")
+        localStorage.setItem("playersLoaded?",JSON.stringify(true))
         loadPlayers() //carrega jogadoras
     }
 }
@@ -95,6 +97,7 @@ const loadPlayers = () => {
           `
         })
         console.log("jogadoras carregadas")
+        
     }else{
         console.log("ERRO, não foi possivel acessar local Storage")
     }
