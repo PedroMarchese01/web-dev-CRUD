@@ -8,11 +8,41 @@
   </head>
   <body>
     <header>
-      <form>
-        <h1>aqui vamos ter as ações</h1>
+      <form id="form-create">
+        <h1>Criar Jogadora</h1>
+        <label>Nome</label>
+        <input type="text" id="nome" />
+
+        <label>Posição</label>
+        <select id="posicao">
+          <option value="Atacante">Atacante</option>
+          <option value="Ponta Direita">Ponta Direita</option>
+          <option value="Ponta Esquerda">Ponta Esquerda</option>
+          <option value="Meia Atacante">Meia Atacante</option>
+          <option value="Meia">Meia</option>
+          <option value="Volante">Volante</option>
+          <option value="Lateral Direita">Lateral Direita</option>
+          <option value="Lateral Esquerda">Lateral Esquerda</option>
+          <option value="Zagueiro">Zagueiro</option>
+          <option value="Goleiro">Goleiro</option>
+        </select>
+
+        <label>Clube</label>
+        <input type="text" id="clube" />
+
+        <label>Gols</label>
+        <input type="text" id="gols" />
+
+        <label>Assistencias</label>
+        <input type="text" id="assistencias" />
+
+        <label>Jogos</label>
+        <input type="text" id="jogos" />
+
+        <button type="submit">Criar</button>
       </form>
     </header>
-    <main></main> 
+    <main></main>
     <script src="script.js"></script>
   </body>
 </html>

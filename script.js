@@ -102,3 +102,58 @@ const loadPlayers = () => {
         console.log("ERRO, não foi possivel acessar local Storage")
     }
 }
+//
+//==================================
+//Metodo Create
+
+const formCriar = document.querySelector("#form-create")
+
+//Evento ao enviar
+
+formCriar.addEventListener("submit" , (e) => {
+  e.preventDefault() //não deixa recarregar e perder as informações colocadas
+
+    //pega as informações das jogadoras
+    const nome = document.getElementById("nome").value
+    const posicao = document.getElementById("posicao").value
+    const clube = document.getElementById("clube").value
+    const gols = Number(document.getElementById("gols").value)
+    const assistencias = Number(document.getElementById("assistencias").value)
+    const jogos = Number(document.getElementById("jogos").value)
+    if(!nome || !posicao || !clube || isNaN(gols) || isNaN(assistencias) || isNaN(jogos)){
+      alert("prencha os campos corretamente")
+    }else{
+      criarJogadora(nome, posicao,clube,gols,assistencias,jogos) // cria jogadora
+    }
+})
+
+const criarJogadora = (nome, posicao,clube,gols,assistencias,jogos) =>{
+  
+  const playerCriado ={ //cria objeto player
+    "nome": nome,
+    "posicao": posicao,
+    "clube": clube,
+    "foto": `https://example.com/${nome}.jpg`,
+    "gols": gols,
+    "assistencias": assistencias,
+    "jogos": jogos,
+    "favorita": false
+  }
+
+  const verificarJogadoras = jogadoras.filter((e) => {
+    return e.nome === playerCriado.nome && e.clube === playerCriado.clube
+  })
+
+  if(verificarJogadoras.length != 0){
+    alert("jogadora já existente")
+  }else{
+    const localStorageAtual = JSON.parse(localStorage.getItem("players"))
+    localStorage.removeItem("players") //jogadoras antigas deletadas
+    localStorageAtual.push(playerCriado)
+    localStorage.setItem("players" , JSON.stringify(localStorageAtual)) // jogadoras novas salvas
+    //recarrega a lista para atualizar os cards
+    loadPlayers() // UPDATE
+    console.log("criado" , jogadoras)//jogador(a) criada :)
+  }
+
+}
