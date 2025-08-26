@@ -73,13 +73,26 @@ const displayPlayers = () => {
     }
 }
 
-const loadPlayers = () => {
+//função para recarregar os players(cards)
+
+const loadPlayers = () => { 
     const itemLocal = JSON.parse(localStorage.getItem("players") || "[]") //precisei colocar || [] caso não retorne nada
-    const main = document.querySelector("main")
-    if(itemLocal != []){
-         main.innerHTML = ""
-        itemLocal.forEach((item , index)=>{
-          main.innerHTML +=`<h1>${item.nome}</h1>`
+    const main = document.querySelector("main") //seleciona main para adicionar as divs das jogadoras
+    if(itemLocal != []){           //se o local storage existir ele carrega na main o conteudo
+         main.innerHTML = ""      //apaga caso já existente
+        itemLocal.forEach((item , index)=>{ //adiciona percorrendo a lista
+          main.innerHTML +=`
+          <div class = "card-players">
+          <h1>${item.nome}</h1>
+          <img src="${item.foto}" alt="imagem jogadora n°${index + 1}"
+          <p>pos:${item.posicao}</p>
+          <p>clube:${item.clube}</p>
+          <p>gols:${item.gols}</p>
+          <p>Assitencias:${item.assistencias}</p>
+          <p>jogos:${item.jogos}</p>
+          <p>favorita:${item.favorita}</p>
+          </div>
+          `
         })
         console.log("jogadoras carregadas")
     }else{
