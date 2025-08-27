@@ -4,10 +4,10 @@
 
 Clique no botão abaixo para acessar a aplicação rodando no **GitHub Pages**:  
 
-[![Abrir no GitHub Pages](https://img.shields.io/badge/Abrir%20no-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://pedromarchese01.github.io/web-dev-CRUD/)
+[Abrir no GitHub Pages]<a href="https://seu-usuario.github.io/seu-repositorio/" target="_blank">
+  <img src="https://img.shields.io/badge/Abrir%20no-GitHub%20Pages-blue?style=for-the-badge&logo=github" alt="Abrir no GitHub Pages">
+</a>
 ## 👥 Integrantes do Projeto
-
-Adicione abaixo os nomes e links dos GitHubs dos integrantes:  
 
 - [Enzo Augusto: RM562249](https://github.com/Enzoo-August)
 - [Pedro Marchese: RM563339](https://github.com/PedroMarchese01) 
@@ -64,7 +64,6 @@ Cada jogadora é exibida como um card com as seguintes informações:
 - Clube  
 - Estatísticas (gols, assistências e jogos)  
 - Botões: **Favoritar**, **Editar** e **Deletar**
-
 
 ---
 
