@@ -253,3 +253,19 @@ const deletarJogadora = (index) => {
     alert("Jogadora removida com sucesso!") //mensagem de sucesso
   }
 }
+
+// ==================== FAVORITO ====================
+const toggleFavorito = (index) => {
+  const localStorageAtual = JSON.parse(localStorage.getItem("players") || "[]")
+  
+  if (!localStorageAtual[index]) return // se não existe, sai da função
+  
+  // alterna a propriedade favorita
+  localStorageAtual[index].favorita = !localStorageAtual[index].favorita
+  
+  // atualiza no localStorage
+  localStorage.setItem("players", JSON.stringify(localStorageAtual))
+  
+  // atualiza a exibição
+  loadPlayers()
+}
