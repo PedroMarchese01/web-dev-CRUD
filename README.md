@@ -4,11 +4,11 @@
 
 Clique no botão abaixo para acessar a aplicação rodando no **GitHub Pages**:  
 
-<a href="https://seu-usuario.github.io/seu-repositorio/" target="_blank">
+<a href="https://pedromarchese01.github.io/web-dev-CRUD/" target="_blank">
   <img src="https://img.shields.io/badge/Abrir%20no-GitHub%20Pages-blue?style=for-the-badge&logo=github" alt="Abrir no GitHub Pages">
 </a>
 
-<a href="https://github.com/seu-usuario/seu-repositorio" target="_blank">
+<a href="https://pedromarchese01.github.io/web-dev-CRUD/" target="_blank">
   <img src="https://img.shields.io/badge/Ver%20Repositório-black?style=for-the-badge&logo=github" alt="Ver Repositório">
 </a>
 
